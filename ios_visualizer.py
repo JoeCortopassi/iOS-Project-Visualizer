@@ -29,6 +29,6 @@ print(outputOfFiles)
 e1=cStringIO.StringIO(outputOfFiles)
 G1=nx.read_edgelist(e1,delimiter='\t')
 pos=nx.spring_layout(G1,iterations=100)
-plt.title(rootdir)
+plt.title(os.path.basename(os.path.normpath(rootdir)))
 nx.draw(G1,pos,node_size=50,with_labels=True)
 plt.savefig("visualized_ios_project.png") # save as png
